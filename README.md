@@ -25,7 +25,7 @@ https://你的用户名.github.io/仓库名/
 - Codex：macOS 脚本 / Windows 脚本
 - Claude Code：macOS 脚本 / Windows 脚本
 
-每个脚本默认使用 `https://registry.npmmirror.com`。用户不需要下载 ZIP，也不需要解压。
+每个脚本默认使用 `https://registry.npmmirror.com`。用户不需要下载 ZIP，也不需要解压；点击按钮会直接下载脚本，不打开脚本页面。
 
 ## 浏览器
 
