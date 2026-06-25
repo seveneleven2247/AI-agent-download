@@ -6,14 +6,14 @@
   var label = document.getElementById('detectedPlatform')
 
   if (isWindows) {
-    if (label) label.textContent = '已识别为 Windows。下载任意工具 ZIP 后运行 install-windows.ps1。'
+    if (label) label.textContent = '已识别为 Windows。下载对应工具的 Windows 脚本后运行。'
     return
   }
 
   if (isMac) {
-    if (label) label.textContent = '已识别为 macOS。下载任意工具 ZIP 后运行 install-macos.command。'
+    if (label) label.textContent = '已识别为 macOS。下载对应工具的 macOS 脚本后运行。'
     return
   }
 
-  if (label) label.textContent = '未识别系统，请选择要下载的工具安装包。'
+  if (label) label.textContent = '未识别系统，请选择对应工具的 macOS 或 Windows 安装脚本。'
 })()

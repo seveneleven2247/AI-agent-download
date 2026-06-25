@@ -319,8 +319,14 @@ code {
   background: var(--red);
 }
 
-.tool-action {
+.tool-actions {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tool-action {
   min-height: 42px;
   display: inline-flex;
   align-items: center;
@@ -394,10 +400,6 @@ code {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
-}
-
-.single-action {
-  grid-template-columns: 1fr;
 }
 
 .full-action {
@@ -477,6 +479,7 @@ dd {
 @media (max-width: 920px) {
   .hero,
   .classified-downloads,
+  .tool-actions,
   .download-actions,
   .tool-grid,
   .tool-jump-row,
