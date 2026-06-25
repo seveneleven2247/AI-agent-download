@@ -1,6 +1,6 @@
 # AI Hub Web
 
-这是一个可以直接发布到 GitHub Pages 的纯静态下载网站，用来分发 CCSwitch、Gemini CLI、Codex 和 Claude Code 的 macOS / Windows 安装脚本。
+这是一个可以直接发布到 GitHub Pages 的纯静态下载网站，用来提供 CCSwitch、Gemini CLI、Codex 和 Claude Code 的官方正版下载入口。
 
 ## 上传到 GitHub
 
@@ -18,14 +18,14 @@ https://你的用户名.github.io/仓库名/
 
 ## 下载区
 
-网页 `#downloads` 区域为每个工具提供两个独立下载按钮：
+网页 `#downloads` 区域为每个工具提供官方来源按钮：
 
-- CCSwitch：macOS 脚本 / Windows 脚本
-- Gemini CLI：macOS 脚本 / Windows 脚本
-- Codex：macOS 脚本 / Windows 脚本
-- Claude Code：macOS 脚本 / Windows 脚本
+- CCSwitch：官方 npm 包 / 官方页面
+- Gemini CLI：官方 npm 包 / 官方 Release
+- Codex：官方 npm 包 / 官方 Release
+- Claude Code：官方 npm 包 / 官方说明
 
-每个脚本默认使用 `https://registry.npmmirror.com`。用户不需要下载 ZIP，也不需要解压；点击按钮会直接下载脚本，不打开脚本页面。
+网页本身不安装软件，也不提供自制脚本。点击下载按钮会跳转到官方源下载原始发布包。
 
 ## 浏览器
 

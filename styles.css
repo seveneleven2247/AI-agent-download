@@ -342,6 +342,19 @@ code {
   background: var(--teal-dark);
 }
 
+.secondary-tool-action,
+.secondary-card-action {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.secondary-tool-action:hover,
+.secondary-card-action:hover {
+  border-color: var(--teal);
+  background: #edf8f4;
+}
+
 .tag {
   display: inline-flex;
   min-height: 26px;
