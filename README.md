@@ -27,30 +27,15 @@ https://你的用户名.github.io/仓库名/
 
 网页本身不安装软件，也不提供自制脚本。点击下载按钮会跳转到官方源下载原始发布包。
 
-## 下载后怎么使用
+## 在终端输入什么打开
 
-这些工具都是终端命令行程序。电脑需要先安装 Node.js 和 npm。
-
-如果还没有下载文件，可以直接安装官方 npm 包：
+安装完成后，打开终端，先进入你要处理的项目文件夹：
 
 ```bash
-npm install -g @anthropic-ai/claude-code
-npm install -g @openai/codex
-npm install -g @google/gemini-cli
-npm install -g ccswitch
+cd ~/你的项目目录
 ```
 
-如果已经从网页下载了 `.tgz` 文件，先进入下载目录，再从本地文件安装：
-
-```bash
-cd ~/Downloads
-npm install -g ./claude-code-2.1.191.tgz
-npm install -g ./codex-0.142.1.tgz
-npm install -g ./gemini-cli-0.47.0.tgz
-npm install -g ./ccswitch-0.10.0-rc.4.tgz
-```
-
-安装完成后，在终端输入对应命令启动：
+然后输入对应命令打开：
 
 | 工具 | 启动命令 | 说明 |
 | --- | --- | --- |
@@ -59,7 +44,13 @@ npm install -g ./ccswitch-0.10.0-rc.4.tgz
 | Gemini CLI | `gemini` | 进入项目目录后运行，也可以用 `gemini -p` 发送一次性问题 |
 | CCSwitch | `ccswitch init` / `ccswitch switch` | 不是 AI Agent，用于初始化和切换 Claude Code 配置 |
 
-Windows PowerShell 可以先输入 `cd "$env:USERPROFILE\Downloads"`，再执行 `npm install -g .\文件名.tgz`。
+Windows PowerShell 进入项目目录的示例：
+
+```powershell
+cd "C:\Users\你的用户名\你的项目目录"
+```
+
+如果终端提示 `command not found` 或“不是内部或外部命令”，说明工具还没有安装成功，或 npm 全局命令目录没有加入 PATH。
 
 ## R2 自动镜像
 

@@ -27,7 +27,7 @@
         <a href="#codex">Codex</a>
         <a href="#claude-code">Claude Code</a>
         <a href="#downloads">下载</a>
-        <a href="#usage">使用</a>
+        <a href="#usage">打开命令</a>
         <a href="#mirror">R2 镜像</a>
       </nav>
     </header>
@@ -232,82 +232,64 @@
       <section id="usage" class="section usage-section">
         <div class="section-heading">
           <div>
-            <h2>下载后怎么启动</h2>
+            <h2>在终端输入什么打开</h2>
             <p>
-              这些工具都是终端命令行程序。电脑需要先安装 Node.js 和 npm；如果已经下载了 <code>.tgz</code> 文件，先在终端进入下载目录，再用 npm 安装。
+              安装完成后，打开终端，先进入你要处理的项目文件夹，然后输入对应命令即可启动。
             </p>
           </div>
         </div>
 
         <div class="usage-primer">
           <article>
-            <h3>推荐：直接安装官方包</h3>
-            <p>如果你还没有下载文件，直接复制对应工具的 npm 安装命令即可。</p>
-            <code>npm install -g @openai/codex</code>
+            <h3>macOS / Linux</h3>
+            <p>先进入项目目录，再运行 AI Agent 命令。</p>
+            <code>cd ~/你的项目目录</code>
           </article>
           <article>
-            <h3>已下载：从本地 .tgz 安装</h3>
-            <p>把文件名替换成你实际下载到电脑里的 <code>.tgz</code> 文件名。</p>
-            <code>cd ~/Downloads</code>
-            <code>npm install -g ./codex-0.142.1.tgz</code>
+            <h3>Windows PowerShell</h3>
+            <p>先进入项目目录，再运行 AI Agent 命令。</p>
+            <code>cd "C:\Users\你的用户名\你的项目目录"</code>
           </article>
         </div>
 
         <div class="command-grid">
           <article class="command-card">
             <span class="tag claude-tag">Claude Code</span>
-            <h3>启动 Claude Code</h3>
-            <p>安装完成后，在你的项目文件夹里运行 <code>claude</code>，第一次启动会按提示登录。</p>
+            <h3>打开 Claude Code</h3>
+            <p>在终端输入下面这个命令即可打开，第一次启动会按提示登录。</p>
             <div class="command-list">
-              <span>直接安装</span>
-              <code>npm install -g @anthropic-ai/claude-code</code>
-              <span>已下载 .tgz</span>
-              <code>npm install -g ./claude-code-2.1.191.tgz</code>
-              <span>进入项目并启动</span>
-              <code>cd 你的项目目录</code>
+              <span>打开命令</span>
               <code>claude</code>
             </div>
           </article>
 
           <article class="command-card">
             <span class="tag codex-tag">Codex</span>
-            <h3>启动 OpenAI Codex</h3>
-            <p>安装完成后，在你的代码仓库里运行 <code>codex</code>，按终端提示登录或配置账号。</p>
+            <h3>打开 OpenAI Codex</h3>
+            <p>在终端输入下面这个命令即可打开，按提示登录或配置账号。</p>
             <div class="command-list">
-              <span>直接安装</span>
-              <code>npm install -g @openai/codex</code>
-              <span>已下载 .tgz</span>
-              <code>npm install -g ./codex-0.142.1.tgz</code>
-              <span>进入项目并启动</span>
-              <code>cd 你的项目目录</code>
+              <span>打开命令</span>
               <code>codex</code>
             </div>
           </article>
 
           <article class="command-card">
             <span class="tag gemini-tag">Gemini CLI</span>
-            <h3>启动 Gemini CLI</h3>
-            <p>安装完成后，在项目目录运行 <code>gemini</code>，也可以用 <code>gemini -p</code> 发送一次性问题。</p>
+            <h3>打开 Gemini CLI</h3>
+            <p>在终端输入下面这个命令即可打开，也可以用一次性提问命令。</p>
             <div class="command-list">
-              <span>直接安装</span>
-              <code>npm install -g @google/gemini-cli</code>
-              <span>已下载 .tgz</span>
-              <code>npm install -g ./gemini-cli-0.47.0.tgz</code>
-              <span>进入项目并启动</span>
-              <code>cd 你的项目目录</code>
+              <span>打开命令</span>
               <code>gemini</code>
+              <span>一次性提问</span>
+              <code>gemini -p "帮我解释这个项目"</code>
             </div>
           </article>
 
           <article class="command-card">
             <span class="tag ccswitch-tag">CCSwitch</span>
             <h3>使用 CCSwitch</h3>
-            <p>CCSwitch 不是 AI Agent，它用于切换 Claude Code 配置。首次使用先初始化，再按项目切换配置。</p>
+            <p>CCSwitch 不是 AI Agent，它用于切换 Claude Code 配置。</p>
             <div class="command-list">
-              <span>直接安装</span>
-              <code>npm install -g ccswitch</code>
-              <span>已下载 .tgz</span>
-              <code>npm install -g ./ccswitch-0.10.0-rc.4.tgz</code>
               <span>首次初始化</span>
               <code>ccswitch init</code>
               <span>切换配置</span>
@@ -317,8 +299,8 @@
         </div>
 
         <div class="terminal-note">
-          <strong>Windows 提示：</strong>
-          <span>在 PowerShell 里可以先输入 <code>cd "$env:USERPROFILE\Downloads"</code>，再执行 <code>npm install -g .\文件名.tgz</code>。</span>
+          <strong>提示：</strong>
+          <span>如果终端提示 <code>command not found</code> 或“不是内部或外部命令”，说明工具还没有安装成功，或 npm 全局命令目录没有加入 PATH。</span>
         </div>
       </section>
 
