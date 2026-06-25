@@ -27,6 +27,12 @@ https://你的用户名.github.io/仓库名/
 
 网页本身不安装软件，也不提供自制脚本。点击下载按钮会跳转到官方源下载原始发布包。
 
+## R2 自动镜像
+
+仓库包含 `.github/workflows/sync-r2.yml` 和 `scripts/update-mirror.mjs`，可以自动跟踪官方 npm 最新版本，并同步到 Cloudflare R2。
+
+配置方式见 [R2_SYNC.md](./R2_SYNC.md)。
+
 ## 浏览器
 
 页面不依赖 Google CDN、外部脚本或外部字体，支持 Chrome、Edge、Safari、Firefox、360、QQ、搜狗、百度、UC 等常见浏览器。

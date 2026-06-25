@@ -1,0 +1,47 @@
+name: Sync official artifacts to Cloudflare R2
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build mirror directory
+        run: |
+          test -n "$PUBLIC_MIRROR_BASE_URL"
+          node scripts/update-mirror.mjs
+        env:
+          PUBLIC_MIRROR_BASE_URL: ${{ vars.PUBLIC_MIRROR_BASE_URL }}
+
+      - name: Install AWS CLI
+        run: |
+          python3 -m pip install --user awscli
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Sync to Cloudflare R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          test -n "$R2_ACCOUNT_ID"
+          test -n "$R2_BUCKET"
+          aws s3 sync mirror/ "s3://${R2_BUCKET}/" \
+            --endpoint-url "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+            --cache-control "public, max-age=300"

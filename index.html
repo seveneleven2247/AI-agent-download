@@ -27,6 +27,7 @@
         <a href="#codex">Codex</a>
         <a href="#claude-code">Claude Code</a>
         <a href="#downloads">下载</a>
+        <a href="#mirror">R2 镜像</a>
       </nav>
     </header>
 
@@ -246,6 +247,28 @@
           <div>
             <span>3</span>
             <p>如果要使用，请按官方页面的安装和登录说明操作。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mirror" class="section mirror-section">
+        <div class="section-heading">
+          <h2>R2 镜像安装</h2>
+          <p>仓库已包含自动同步工作流，可把官方 npm 包同步到 Cloudflare R2。</p>
+        </div>
+
+        <div class="mirror-grid">
+          <div>
+            <h3>macOS / Linux</h3>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- codex</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- claude-code</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- gemini-cli</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- ccswitch</code>
+          </div>
+          <div>
+            <h3>Windows PowerShell</h3>
+            <code>iwr https://你的R2域名/install.ps1 -OutFile $env:TEMP\ai-hub-install.ps1</code>
+            <code>powershell -ExecutionPolicy Bypass -File $env:TEMP\ai-hub-install.ps1 codex</code>
           </div>
         </div>
       </section>

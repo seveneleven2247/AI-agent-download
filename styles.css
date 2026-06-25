@@ -480,6 +480,36 @@ dd {
   background: #ffffff;
 }
 
+.mirror-section {
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
+.mirror-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mirror-grid > div {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfd;
+}
+
+.mirror-grid h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+.mirror-grid code {
+  display: block;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
 .footer {
   min-height: 70px;
   padding: 22px clamp(18px, 4vw, 54px);
@@ -494,6 +524,7 @@ dd {
   .classified-downloads,
   .tool-actions,
   .download-actions,
+  .mirror-grid,
   .tool-grid,
   .tool-jump-row,
   .split-section,
