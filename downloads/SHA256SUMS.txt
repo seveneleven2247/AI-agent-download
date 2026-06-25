@@ -1,0 +1,4 @@
+d822f7ddda390b547524217b59857ef556cf7a07364aa0c8d037c996ad42101b  tools/ccswitch-installer.zip
+8d18ee8f59cd7ca949a9923e72c692936732b7e4f78da6d9d4dd3cddf5bae93f  tools/gemini-cli-installer.zip
+4fe6f2f067fad3ac2ad3cb1e30572ce06c8f24bf62dc62f9e1247e06f7b0cda8  tools/codex-installer.zip
+f0fb179f0de04cde5b1bec3ce217f91fc6452a123a555316585cb6f1ec7a3f60  tools/claude-code-installer.zip

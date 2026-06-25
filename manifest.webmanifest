@@ -1,0 +1,9 @@
+{
+  "name": "AI Hub Web 下载中心",
+  "short_name": "AI Hub Web",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fa",
+  "theme_color": "#1e8a73",
+  "lang": "zh-CN"
+}
