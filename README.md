@@ -44,20 +44,27 @@ npm install -g ccswitch --registry=https://registry.npmmirror.com
 
 ## Cloudflare 国内访问说明
 
-如果使用 `https://aiagentdownload.elvenzeng.workers.dev/`，代码层面已经做到：
+当前推荐访问域名：
+
+```text
+https://elvenzeng.cc.cd/
+```
+
+代码层面已经做到：
 
 - 静态 HTML/CSS/JS，无外部 CDN 依赖。
 - 下载链接优先指向 `registry.npmmirror.com`。
 - 安装命令显式指定 `--registry=https://registry.npmmirror.com`。
 
-但 `workers.dev` 域名本身在中国大陆网络下不能保证稳定可达。要做真正稳定的中国大陆访问，建议二选一：
+但 `workers.dev` 域名本身在中国大陆网络下不能保证稳定可达。当前项目使用 Cloudflare Pages + 自定义域名，DNSHE 里需要把 `elvenzeng.cc.cd` CNAME 到：
 
-- 使用已备案域名接入 Cloudflare China Network；这是 Cloudflare 面向中国大陆节点交付的正式方案。
-- 同步部署一份到境内静态托管/CDN，例如阿里云 OSS + CDN、腾讯云 COS + CDN、七牛云 CDN，并使用备案域名访问。
+```text
+aiagentdownload-pages.pages.dev
+```
 
-如果必须继续使用同一个 `workers.dev` 地址，只能优化页面资源和下载源，不能保证所有中国大陆运营商都能打开这个域名。
+这可以避开直接访问 `*.workers.dev`。如果要做真正稳定的中国大陆访问，仍建议使用已备案域名接入境内 CDN，或接入 Cloudflare China Network。
 
-如果要复制 `ai.ziikoo.com` 这种方式，请使用 Cloudflare 自定义域名部署，具体步骤见 [DEPLOY_CLOUDFLARE.md](./DEPLOY_CLOUDFLARE.md)。
+具体步骤见 [DEPLOY_CLOUDFLARE.md](./DEPLOY_CLOUDFLARE.md)。
 
 ## 在终端输入什么打开
 

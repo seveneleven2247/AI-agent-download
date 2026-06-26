@@ -1,70 +1,62 @@
-# Cloudflare 自定义域名部署
+# Cloudflare Pages 自定义域名部署
 
-`ai.ziikoo.com` 能在国内直接打开，关键做法是使用自己的域名接入 Cloudflare，而不是直接暴露默认的 `*.workers.dev` 域名。
+`workers.dev` 在中国大陆网络下不稳定。当前项目改用 Cloudflare Pages 发布静态文件，再用 DNSHE 的 CNAME 把 `elvenzeng.cc.cd` 指向 Pages 项目域名。
 
-本项目已经配置为 Cloudflare Workers 静态资源项目：
+## 当前配置
 
+- Pages 项目名：`aiagentdownload-pages`
 - 发布目录：`public/`
+- Pages 默认域名：`aiagentdownload-pages.pages.dev`
+- 自定义域名：`elvenzeng.cc.cd`
 - Wrangler 配置：`wrangler.toml`
-- 默认 Worker 名称：`aiagentdownload`
 
-## 1. 准备域名
+## 1. 发布到 Cloudflare Pages
 
-你需要一个真实域名，并且这个域名要已经添加到 Cloudflare。例如：
+```bash
+npx wrangler pages deploy --branch=main
+```
+
+如果需要显式指定项目：
+
+```bash
+npx wrangler pages deploy public --project-name=aiagentdownload-pages --branch=main
+```
+
+## 2. 在 DNSHE 设置解析
+
+在 DNSHE 给 `elvenzeng.cc.cd` 添加一条记录：
 
 ```text
-aiagentdownload.example.com
+记录类型：CNAME
+主机记录：@ 或 elvenzeng
+记录值：aiagentdownload-pages.pages.dev
+TTL：默认
 ```
 
-如果你还没有域名，不能复制 `ai.ziikoo.com` 的方式；`aiagentdownload.elvenzeng.workers.dev` 仍然是默认 `workers.dev` 地址，在中国大陆不能保证稳定可达。
+如果 DNSHE 当前页面是在管理 `elvenzeng.cc.cd` 这个域名，通常主机记录填 `@`。
+如果 DNSHE 当前页面是在管理 `cc.cd`，主机记录填 `elvenzeng`。
 
-## 2. 登录 Cloudflare
+## 3. 验证
+
+DNS 生效后执行：
 
 ```bash
-npx wrangler login
+dig +short CNAME elvenzeng.cc.cd
+curl -I https://elvenzeng.cc.cd/
 ```
 
-登录成功后确认账号：
+期望结果：
 
-```bash
-npx wrangler whoami
+- CNAME 返回 `aiagentdownload-pages.pages.dev.`
+- `curl` 返回 `HTTP/2 200`
+- 响应头里有 `server: cloudflare`
+
+## 当前状态
+
+Cloudflare Pages 已经发布成功，并且 `elvenzeng.cc.cd` 已经添加到 Pages 自定义域名里。
+
+现在还差 DNSHE 的 CNAME 记录。Cloudflare 当前给出的状态是：
+
+```text
+CNAME record not set
 ```
-
-## 3. 绑定自定义域名
-
-打开 `wrangler.toml`，把最后的示例改成你的真实域名：
-
-```toml
-[[routes]]
-pattern = "aiagentdownload.example.com"
-custom_domain = true
-```
-
-注意：这个域名不能已有冲突的 CNAME 记录。
-
-## 4. 部署
-
-```bash
-npx wrangler deploy
-```
-
-部署成功后，Cloudflare 会自动创建 DNS 记录并签发证书。
-
-## 5. 验证
-
-```bash
-curl -I https://aiagentdownload.example.com/
-dig +short aiagentdownload.example.com
-```
-
-如果返回头里有 `server: cloudflare`，并且 DNS 返回 Cloudflare IP，说明部署方式已经和 `ai.ziikoo.com` 类似。
-
-## 当前验证结果
-
-我检查到：
-
-- `ai.ziikoo.com` 返回 `server: cloudflare`、`cf-cache-status: HIT`。
-- `ai.ziikoo.com` DNS 返回 Cloudflare Anycast IP。
-- `aiagentdownload.elvenzeng.workers.dev` 在当前网络下请求超时。
-
-结论：需要换成 Cloudflare 自定义域名，不能继续依赖 `workers.dev`。
