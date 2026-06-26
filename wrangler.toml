@@ -6,9 +6,6 @@ preview_urls = false
 [assets]
 directory = "./public"
 
-# Replace this with a domain that is already added to your Cloudflare account.
-# This is the key difference from using the default *.workers.dev URL.
-# Example:
-# [[routes]]
-# pattern = "aiagentdownload.example.com"
-# custom_domain = true
+[[routes]]
+pattern = "aiagentdownload.seveneleven.com"
+custom_domain = true
