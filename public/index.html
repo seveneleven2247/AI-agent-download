@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI Hub Web 网页下载中心，提供 CCSwitch、Gemini CLI、Codex 和 Claude Code 的独立下载入口。"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>AI Hub Web 网页下载中心</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AI Hub Web 首页">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>AI Hub Web</strong>
+          <small>网页下载中心</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#ccswitch">CCSwitch</a>
+        <a href="#gemini-cli">Gemini CLI</a>
+        <a href="#codex">Codex</a>
+        <a href="#claude-code">Claude Code</a>
+        <a href="#downloads">下载</a>
+        <a href="#china-install">国内安装</a>
+        <a href="#usage">打开命令</a>
+        <a href="#mirror">R2 镜像</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">国内外浏览器可打开 · 无外部 CDN 依赖</p>
+          <h1>AI Hub Web</h1>
+          <p class="hero-text">
+            一个纯静态网页下载中心，按 CCSwitch、Gemini CLI、Codex 和 Claude Code 分门别类提供国内镜像优先、官方源备用的下载入口。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#downloads">
+              选择软件下载
+            </a>
+            <a class="secondary-action" href="#china-install">复制国内安装命令</a>
+          </div>
+          <div class="support-row" aria-label="支持的浏览器">
+            <span>Chrome</span>
+            <span>Edge</span>
+            <span>Safari</span>
+            <span>Firefox</span>
+            <span>360</span>
+            <span>QQ</span>
+            <span>搜狗</span>
+            <span>百度</span>
+            <span>UC</span>
+          </div>
+        </div>
+        <figure class="product-shot">
+          <img src="./assets/web-preview.png" alt="AI Hub Web 网页下载中心预览" />
+        </figure>
+      </section>
+
+      <section id="tools" class="section tools-section">
+        <div class="section-heading">
+          <h2>网页版工具分类</h2>
+          <p>国内用户优先使用 npmmirror 下载，官方 npm 或 GitHub 页面作为备用。</p>
+        </div>
+
+        <div class="tool-jump-row" aria-label="工具快速入口">
+          <a href="#ccswitch">CCSwitch</a>
+          <a href="#gemini-cli">Gemini CLI</a>
+          <a href="#codex">Codex</a>
+          <a href="#claude-code">Claude Code</a>
+        </div>
+
+        <div class="tool-grid">
+          <article id="claude-code" class="tool-card">
+            <div class="tool-icon claude-icon">C</div>
+            <div>
+              <h3>Claude Code</h3>
+              <p>Anthropic 的终端编码代理，用于在本地项目里读代码、改代码和运行命令。</p>
+            </div>
+            <dl>
+              <div>
+                <dt>命令</dt>
+                <dd><code>claude</code></dd>
+              </div>
+              <div>
+                <dt>包名</dt>
+                <dd><code>@anthropic-ai/claude-code</code></dd>
+              </div>
+            </dl>
+            <div class="tool-actions">
+              <a class="tool-action" href="https://registry.npmmirror.com/@anthropic-ai/claude-code/-/claude-code-2.1.191.tgz">国内镜像 npm 包</a>
+              <a class="tool-action secondary-tool-action" href="https://www.npmjs.com/package/@anthropic-ai/claude-code" target="_blank" rel="noopener">官方页面</a>
+            </div>
+          </article>
+
+          <article id="codex" class="tool-card">
+            <div class="tool-icon codex-icon">O</div>
+            <div>
+              <h3>Codex</h3>
+              <p>OpenAI 的本地编码代理，适合代码生成、修改、调试和仓库内任务处理。</p>
+            </div>
+            <dl>
+              <div>
+                <dt>命令</dt>
+                <dd><code>codex</code></dd>
+              </div>
+              <div>
+                <dt>包名</dt>
+                <dd><code>@openai/codex</code></dd>
+              </div>
+            </dl>
+            <div class="tool-actions">
+              <a class="tool-action" href="https://registry.npmmirror.com/@openai/codex/-/codex-0.142.1.tgz">国内镜像 npm 包</a>
+              <a class="tool-action secondary-tool-action" href="https://github.com/openai/codex/releases/latest" target="_blank" rel="noopener">官方 Release</a>
+            </div>
+          </article>
+
+          <article id="gemini-cli" class="tool-card">
+            <div class="tool-icon gemini-icon">G</div>
+            <div>
+              <h3>Gemini CLI</h3>
+              <p>Google Gemini 的命令行工具，用于在终端中调用 Gemini 能力和处理开发任务。</p>
+            </div>
+            <dl>
+              <div>
+                <dt>命令</dt>
+                <dd><code>gemini</code></dd>
+              </div>
+              <div>
+                <dt>包名</dt>
+                <dd><code>@google/gemini-cli</code></dd>
+              </div>
+            </dl>
+            <div class="tool-actions">
+              <a class="tool-action" href="https://registry.npmmirror.com/@google/gemini-cli/-/gemini-cli-0.47.0.tgz">国内镜像 npm 包</a>
+              <a class="tool-action secondary-tool-action" href="https://github.com/google-gemini/gemini-cli/releases/latest" target="_blank" rel="noopener">官方 Release</a>
+            </div>
+          </article>
+
+          <article id="ccswitch" class="tool-card">
+            <div class="tool-icon ccswitch-icon">S</div>
+            <div>
+              <h3>CCSwitch</h3>
+              <p>Claude Code 配置切换工具，适合管理不同项目、团队或角色的配置 Profile。</p>
+            </div>
+            <dl>
+              <div>
+                <dt>命令</dt>
+                <dd><code>ccswitch</code></dd>
+              </div>
+              <div>
+                <dt>包名</dt>
+                <dd><code>ccswitch</code></dd>
+              </div>
+            </dl>
+            <div class="tool-actions">
+              <a class="tool-action" href="https://registry.npmmirror.com/ccswitch/-/ccswitch-0.10.0-rc.4.tgz">国内镜像 npm 包</a>
+              <a class="tool-action secondary-tool-action" href="https://github.com/TomokiMatsubuchi/ccswitch" target="_blank" rel="noopener">官方页面</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="downloads" class="section">
+        <div class="section-heading">
+          <h2>按工具下载</h2>
+          <p id="detectedPlatform">以下链接优先使用国内 npm 镜像，官方源保留为备用。</p>
+        </div>
+
+        <div class="classified-downloads">
+          <article class="classified-card" data-tool="ccswitch">
+            <div>
+              <span class="tag ccswitch-tag">CCSwitch</span>
+              <h3>CCSwitch 下载</h3>
+              <p>用于管理 Claude Code 配置 Profile。国内下载优先走 npmmirror。</p>
+            </div>
+            <div class="download-actions">
+              <a class="card-action full-action" href="https://registry.npmmirror.com/ccswitch/-/ccswitch-0.10.0-rc.4.tgz">国内镜像下载</a>
+              <a class="card-action full-action secondary-card-action" href="https://registry.npmjs.org/ccswitch/-/ccswitch-0.10.0-rc.4.tgz">官方源备用</a>
+            </div>
+            <code>npm install -g ccswitch --registry=https://registry.npmmirror.com</code>
+          </article>
+
+          <article class="classified-card" data-tool="gemini">
+            <div>
+              <span class="tag gemini-tag">Gemini CLI</span>
+              <h3>Gemini CLI 下载</h3>
+              <p>用于在终端调用 Gemini。国内下载优先走 npmmirror。</p>
+            </div>
+            <div class="download-actions">
+              <a class="card-action full-action" href="https://registry.npmmirror.com/@google/gemini-cli/-/gemini-cli-0.47.0.tgz">国内镜像下载</a>
+              <a class="card-action full-action secondary-card-action" href="https://registry.npmjs.org/@google/gemini-cli/-/gemini-cli-0.47.0.tgz">官方源备用</a>
+            </div>
+            <code>npm install -g @google/gemini-cli --registry=https://registry.npmmirror.com</code>
+          </article>
+
+          <article class="classified-card" data-tool="codex">
+            <div>
+              <span class="tag codex-tag">Codex</span>
+              <h3>Codex 下载</h3>
+              <p>OpenAI 本地编码代理。国内下载优先走 npmmirror。</p>
+            </div>
+            <div class="download-actions">
+              <a class="card-action full-action" href="https://registry.npmmirror.com/@openai/codex/-/codex-0.142.1.tgz">国内镜像下载</a>
+              <a class="card-action full-action secondary-card-action" href="https://registry.npmjs.org/@openai/codex/-/codex-0.142.1.tgz">官方源备用</a>
+            </div>
+            <code>npm install -g @openai/codex --registry=https://registry.npmmirror.com</code>
+          </article>
+
+          <article class="classified-card" data-tool="claude">
+            <div>
+              <span class="tag claude-tag">Claude Code</span>
+              <h3>Claude Code 下载</h3>
+              <p>Anthropic 终端编码代理。国内下载优先走 npmmirror。</p>
+            </div>
+            <div class="download-actions">
+              <a class="card-action full-action" href="https://registry.npmmirror.com/@anthropic-ai/claude-code/-/claude-code-2.1.191.tgz">国内镜像下载</a>
+              <a class="card-action full-action secondary-card-action" href="https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.191.tgz">官方源备用</a>
+            </div>
+            <code>npm install -g @anthropic-ai/claude-code --registry=https://registry.npmmirror.com</code>
+          </article>
+        </div>
+
+      </section>
+
+      <section id="china-install" class="section china-section">
+        <div class="section-heading">
+          <div>
+            <h2>中国大陆优先安装</h2>
+            <p>如果浏览器下载慢，推荐直接在终端复制下面的命令，统一使用 npmmirror 国内 npm 源安装。</p>
+          </div>
+        </div>
+
+        <div class="install-grid">
+          <article class="command-card">
+            <span class="tag claude-tag">Claude Code</span>
+            <h3>国内源安装</h3>
+            <code>npm install -g @anthropic-ai/claude-code --registry=https://registry.npmmirror.com</code>
+            <code>claude</code>
+          </article>
+
+          <article class="command-card">
+            <span class="tag codex-tag">Codex</span>
+            <h3>国内源安装</h3>
+            <code>npm install -g @openai/codex --registry=https://registry.npmmirror.com</code>
+            <code>codex</code>
+          </article>
+
+          <article class="command-card">
+            <span class="tag gemini-tag">Gemini CLI</span>
+            <h3>国内源安装</h3>
+            <code>npm install -g @google/gemini-cli --registry=https://registry.npmmirror.com</code>
+            <code>gemini</code>
+          </article>
+
+          <article class="command-card">
+            <span class="tag ccswitch-tag">CCSwitch</span>
+            <h3>国内源安装</h3>
+            <code>npm install -g ccswitch --registry=https://registry.npmmirror.com</code>
+            <code>ccswitch init</code>
+          </article>
+        </div>
+
+        <div class="terminal-note">
+          <strong>网络说明：</strong>
+          <span>这些命令只能解决 npm 下载问题。Claude、Codex、Gemini 登录和模型调用仍取决于对应官方服务在你当前网络下是否可访问。</span>
+        </div>
+      </section>
+
+      <section id="usage" class="section usage-section">
+        <div class="section-heading">
+          <div>
+            <h2>在终端输入什么打开</h2>
+            <p>
+              安装完成后，打开终端，先进入你要处理的项目文件夹，然后输入对应命令即可启动。
+            </p>
+          </div>
+        </div>
+
+        <div class="usage-primer">
+          <article>
+            <h3>macOS / Linux</h3>
+            <p>先进入项目目录，再运行 AI Agent 命令。</p>
+            <code>cd ~/你的项目目录</code>
+          </article>
+          <article>
+            <h3>Windows PowerShell</h3>
+            <p>先进入项目目录，再运行 AI Agent 命令。</p>
+            <code>cd "C:\Users\你的用户名\你的项目目录"</code>
+          </article>
+        </div>
+
+        <div class="command-grid">
+          <article class="command-card">
+            <span class="tag claude-tag">Claude Code</span>
+            <h3>打开 Claude Code</h3>
+            <p>在终端输入下面这个命令即可打开，第一次启动会按提示登录。</p>
+            <div class="command-list">
+              <span>打开命令</span>
+              <code>claude</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <span class="tag codex-tag">Codex</span>
+            <h3>打开 OpenAI Codex</h3>
+            <p>在终端输入下面这个命令即可打开，按提示登录或配置账号。</p>
+            <div class="command-list">
+              <span>打开命令</span>
+              <code>codex</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <span class="tag gemini-tag">Gemini CLI</span>
+            <h3>打开 Gemini CLI</h3>
+            <p>在终端输入下面这个命令即可打开，也可以用一次性提问命令。</p>
+            <div class="command-list">
+              <span>打开命令</span>
+              <code>gemini</code>
+              <span>一次性提问</span>
+              <code>gemini -p "帮我解释这个项目"</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <span class="tag ccswitch-tag">CCSwitch</span>
+            <h3>使用 CCSwitch</h3>
+            <p>CCSwitch 不是 AI Agent，它用于切换 Claude Code 配置。</p>
+            <div class="command-list">
+              <span>首次初始化</span>
+              <code>ccswitch init</code>
+              <span>切换配置</span>
+              <code>ccswitch switch</code>
+            </div>
+          </article>
+        </div>
+
+        <div class="terminal-note">
+          <strong>提示：</strong>
+          <span>如果终端提示 <code>command not found</code> 或“不是内部或外部命令”，说明工具还没有安装成功，或 npm 全局命令目录没有加入 PATH。</span>
+        </div>
+      </section>
+
+      <section id="mirror" class="section mirror-section">
+        <div class="section-heading">
+          <h2>R2 镜像安装</h2>
+          <p>仓库已包含自动同步工作流，可把官方 npm 包同步到 Cloudflare R2。</p>
+        </div>
+
+        <div class="mirror-grid">
+          <div>
+            <h3>macOS / Linux</h3>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- codex</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- claude-code</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- gemini-cli</code>
+            <code>curl -fsSL https://你的R2域名/install.sh | bash -s -- ccswitch</code>
+          </div>
+          <div>
+            <h3>Windows PowerShell</h3>
+            <code>iwr https://你的R2域名/install.ps1 -OutFile $env:TEMP\ai-hub-install.ps1</code>
+            <code>powershell -ExecutionPolicy Bypass -File $env:TEMP\ai-hub-install.ps1 codex</code>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>AI Hub Web 0.1.0</span>
+      <span>纯静态网站，无外部脚本，无 Google 服务。</span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

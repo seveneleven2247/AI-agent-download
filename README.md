@@ -57,6 +57,8 @@ npm install -g ccswitch --registry=https://registry.npmmirror.com
 
 如果必须继续使用同一个 `workers.dev` 地址，只能优化页面资源和下载源，不能保证所有中国大陆运营商都能打开这个域名。
 
+如果要复制 `ai.ziikoo.com` 这种方式，请使用 Cloudflare 自定义域名部署，具体步骤见 [DEPLOY_CLOUDFLARE.md](./DEPLOY_CLOUDFLARE.md)。
+
 ## 在终端输入什么打开
 
 安装完成后，打开终端，先进入你要处理的项目文件夹：
