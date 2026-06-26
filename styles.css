@@ -480,10 +480,16 @@ dd {
 }
 
 .usage-primer,
-.command-grid {
+.command-grid,
+.install-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.china-section {
+  border-top: 1px solid var(--line);
+  background: #ffffff;
 }
 
 .usage-primer {
@@ -513,6 +519,12 @@ dd {
 .command-list code {
   display: block;
   margin-top: 10px;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+.install-grid .command-card code {
+  display: block;
   overflow-wrap: anywhere;
   line-height: 1.45;
 }
@@ -603,6 +615,7 @@ dd {
   .tool-jump-row,
   .usage-primer,
   .command-grid,
+  .install-grid,
   .split-section,
   .checksum-section {
     grid-template-columns: 1fr;
