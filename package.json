@@ -1,0 +1,16 @@
+{
+  "name": "ai-agent-download",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static AI agent download hub deployed on Cloudflare Workers or Pages.",
+  "scripts": {
+    "build": "node scripts/prepare-cloudflare.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:pages": "npm run build && wrangler pages deploy public --project-name=aiagentdownload-pages --branch=main",
+    "preview": "npm run build && wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "4.105.0"
+  }
+}

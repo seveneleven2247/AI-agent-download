@@ -1,6 +1,6 @@
 # AI Hub Web
 
-这是一个可以直接发布到 GitHub Pages、Cloudflare Pages 或 Cloudflare Workers 静态资源的纯静态下载网站，用来提供 CCSwitch、Gemini CLI、Codex 和 Claude Code 的下载入口。
+这是一个可以直接发布到 GitHub Pages、Cloudflare Workers 静态资源或 Cloudflare Pages 的纯静态下载网站，用来提供 CCSwitch、Gemini CLI、Codex 和 Claude Code 的下载入口。
 
 页面不依赖外部 CDN、外部字体或外部脚本；下载和安装命令优先使用 `https://registry.npmmirror.com`，官方 npm 源作为备用。
 
@@ -55,14 +55,30 @@ https://elvenzeng.cc.cd/
 - 静态 HTML/CSS/JS，无外部 CDN 依赖。
 - 下载链接优先指向 `registry.npmmirror.com`。
 - 安装命令显式指定 `--registry=https://registry.npmmirror.com`。
+- `wrangler.toml` 支持 Cloudflare Workers 静态资源部署，服务名为 `aiagentdownload2`。
+- `wrangler.pages.toml` 保留 Cloudflare Pages 配置，项目名为 `aiagentdownload-pages`。
 
-但 `workers.dev` 域名本身在中国大陆网络下不能保证稳定可达。当前项目使用 Cloudflare Pages + 自定义域名，DNSHE 里需要把 `elvenzeng.cc.cd` CNAME 到：
+部署到 Workers：
+
+```bash
+npm install
+npm run deploy
+```
+
+部署到 Pages：
+
+```bash
+npm install
+npm run deploy:pages
+```
+
+但 `workers.dev` 和 `pages.dev` 域名在中国大陆网络下不能保证稳定可达。如果继续使用 Cloudflare Pages + 自定义域名，DNSHE 里需要把 `elvenzeng.cc.cd` CNAME 到：
 
 ```text
 aiagentdownload-pages.pages.dev
 ```
 
-这可以避开直接访问 `*.workers.dev`。如果要做真正稳定的中国大陆访问，仍建议使用已备案域名接入境内 CDN，或接入 Cloudflare China Network。
+这可以避开直接访问 `*.pages.dev`。如果改用 Workers 自定义域名，则在 Cloudflare Workers 的 Triggers/Routes 里绑定你的域名。如果要做真正稳定的中国大陆访问，仍建议使用已备案域名接入境内 CDN，或接入 Cloudflare China Network。
 
 具体步骤见 [DEPLOY_CLOUDFLARE.md](./DEPLOY_CLOUDFLARE.md)。
 
